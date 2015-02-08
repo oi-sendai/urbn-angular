@@ -10,8 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand logo-intro" href="#/"><span class="logo-intro">unstructured
-      <br/>-networking</span></a>
+      <a class="navbar-brand logo-intro" href="#/"><span class="logo-intro">unstructured-networking</span></a>
       <!-- <span class="logo-outro">i.d</span>e -->
     </div>
 
@@ -19,8 +18,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <!-- <li><a href="#/listings">Listings</a></li> -->
-        <li><a href="#/profile/dskfjkdshf">Profile</a></li>
-        <li><a href="#/account">Account</a></li>
 <!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -28,28 +25,22 @@
           </ul>
         </li> -->
       </ul>
-      <ul class="navbar-form navbar-right" role="search" ng-controller="MainCtrl" >
-          <section ng-hide="loggedIn">
+      <ul class="navbar-form navbar-right"  ng-hide="loggedIn" role="search" ng-controller="MainCtrl" >
         <form role="form">
-            <div class="form-group">
-              <input type="email" class="form-control" id="inputEmail" ng-model="registerData.email" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" id="inputPassword" ng-model="registerData.password" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-default" ng-submit="login()" ng-click="login()">Log In</button> 
+          <div class="form-group">
+            <input type="email" class="form-control" id="inputEmail" ng-model="registerData.email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="inputPassword" ng-model="registerData.password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default" ng-submit="login()" ng-click="login()">Log In</button> 
         </form>
-          </section>
-          <section ng-show="loggedIn">
-        <form role="form">
-            <div class="form-group" ng-controller="MainCtrl">
-              <h3>Hello {{firebaseUser}}</h3>
-            </div>
-            <button type="submit" class="btn btn-default" ng-submit="logout()" ng-click="logout()">Log Out</button>
-          </form>
-          </section>
-        </ul>
+      </ul>
+      <ul class="nav navbar-nav  navbar-right" ng-show="loggedIn" role="search" ng-controller="MainCtrl" >
+          <li><a href="#/profile/{{firebaseUser}}">Profile</a></li>
+          <li><a href="#/account">Account</a></li>
+          <li><a class="pointer" ng-click="logout()">Log Out {{firebaseUser}}</a></li>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-</header>

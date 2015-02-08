@@ -3,11 +3,12 @@ CloudCtrl = angular.module('CloudCtrl', []);
 CloudCtrl.controller('CloudCtrl', function($scope, _
 	// ,UserFactory
 	,CloudFactory
+	,AuthFactory
 	){
 	// $scope.keepArray = false; //{skill:'',value:'0'}
 	$scope.debug = 'CloudCtrl';
 
-
+ 
 	// if word inArray is truthy push array to array
 
 	// $scope.activeFilters = [];
@@ -18,10 +19,17 @@ CloudCtrl.controller('CloudCtrl', function($scope, _
 	$scope.filters = [];
 	// test 1
 	$scope.init = function(){
-		CloudFactory.users().then(function(data){
-			$scope.users = data.val(); // cache users object
-			console.log('--------------users', data.val());
-			$scope.gatherSkills(data.val());
+		// CloudFactory.users().then(function(data){
+		// 	$scope.users = data.val(); // cache users object
+		// 	console.log('--------------users', data.val());
+		// 	$scope.gatherSkills(data.val());
+		// });
+		AuthFactory.getUsers().then(function(data){
+			// console.log(data);
+			// $scope.users = data;
+			$scope.users = data; // cache users object
+			console.log('--------------users', data);
+			$scope.gatherSkills(data);
 		});
 	};
 	$scope.init();

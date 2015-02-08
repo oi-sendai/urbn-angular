@@ -50,7 +50,7 @@ SystemApp.config(['$stateProvider', '$urlRouterProvider',
 	var account= { 
 	    name: 'account',  //mandatory
 	    templateUrl: 'application/profile/profile-layout.html',
-	    // controller: 'AuthCtrl',
+	    controller: 'UsersCtrl',
 	    // resolve: {
 
 	    // }
