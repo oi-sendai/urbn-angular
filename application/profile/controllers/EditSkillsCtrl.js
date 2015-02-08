@@ -26,7 +26,7 @@ EditSkillsCtrl.controller('EditSkillsCtrl', function($rootScope, $scope, $http, 
         // $scope.username = user.username;
         // console.log(user)
     }
-    $scope.init();
+    // $scope.init();
 
 
 

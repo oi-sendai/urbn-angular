@@ -12,7 +12,7 @@ var SystemApp = angular.module('SystemApp',
 	// ,'DreamsCtrl'
 	// ,'SkillsCtrl'
 	// ,'StatsCtrl'
-	,'EditProfileCtrl'
+	// ,'EditProfileCtrl'
 	,'EditSkillsCtrl'
 	,'CloudCtrl'
 	,'CloudDirective'
@@ -57,21 +57,28 @@ SystemApp.config(['$stateProvider', '$urlRouterProvider',
 	};
 	var accountView = { 
 	    name: 'account.edit',  //mandatory
-	    url: '/account',
+	    url: '/account/:username',
+	   	resolve: {
+	   		user: ['$stateParams','ProfileByUid', function($stateParams, ProfileByUid){
+	   			return ProfileByUid($stateParams.username);
+	   		}]
+	   	} ,
 	    views:{
             'dreams':{
                 templateUrl:'application/profile/edit-profile-dreams.html',
-	    		controller: 'EditProfileCtrl'
+	    		controller: 'AccountCtrl'
                 // controller: 'DreamsCtrl'
             },
             'stats':{
             	templateUrl: 'application/profile/edit-profile-stats.html',
-	    		controller: 'EditSkillsCtrl'
+	    		// controller: 'EditSkillsCtrl'
+	    		controller: 'AccountCtrl'
                 // controller: 'StatsCtrl'
             },
             'skills': {
             	templateUrl: 'application/profile/edit-profile-skills.html',
-	    		controller: 'EditProfileCtrl'
+	    		controller: 'AccountCtrl'
+	    		// controller: 'EditProfileCtrl'
                 // controller: 'SkillsCtrl'
             }
         }
