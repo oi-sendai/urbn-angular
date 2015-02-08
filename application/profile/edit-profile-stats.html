@@ -4,14 +4,14 @@
 	<div class="row top-section">
 		<form role="form">
 		<div class="col-sm-9">
-			<input type="text" class="form-control" ng-model="skillData.newItem" id="inputUsername" ng-model="inputUsername" placeholder="Form Building">
+			<input type="text" class="form-control" ng-model="interestData.newItem" id="inputUsername" ng-model="inputUsername" placeholder="Form Building">
 		</div>
 		<div class="col-sm-3">
-			<button class="btn btn-success"  ng-submit="addSkill()" ng-click="addSkill()">Add</button>
+			<button class="btn btn-success" ng-click="addInterest()">Add</button>
 		</div>
 		</form>
 	</div>
-	<article class="repeater" ng-repeat="thing in skills">
+	<article class="repeater" ng-repeat="thing in interests">
 		<div class="row top-section">
 			<div class="col-sm-10 ">
 				<div class="edit-hidden thing-appearing animated" ng-hide="!editswitch">

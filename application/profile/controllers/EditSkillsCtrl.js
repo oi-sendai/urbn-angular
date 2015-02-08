@@ -7,48 +7,50 @@ EditSkillsCtrl.controller('EditSkillsCtrl', function($rootScope, $scope, $http, 
     // $scope.editing = false;
     // $scope.beerData = {};
     // $scope.ales = 'ales';
-    $scope.profile = {}
-    $scope.profile.info = 'Talk about yourself';
-
-    var firebase_url = 'https://brilliant-fire-7870.firebaseio.com/';
-
-    $scope.init = function(){
-        console.log('init', $rootScope.firebaseUser)
-        // var user = $rootScope.firebaseUser;
-        AccountFactory.skills().then(function(data){
-            console.log('dat', data.val());
-            var skills =  data.val();
-            skills = _.map(skills, function(value,key){
-                return value
-            });
-            $scope.skills = skills;
-        });
-        // $scope.username = user.username;
-        // console.log(user)
-    }
-    // $scope.init();
 
 
 
-    $scope.formData = {};
+    // $scope.profile = {}
+    // $scope.profile.info = 'Talk about yourself';
 
-    $scope.skillData = {};
+    // var firebase_url = 'https://brilliant-fire-7870.firebaseio.com/';
 
-    $scope.editswitch =  false;
+    // $scope.init = function(){
+    //     console.log('init', $rootScope.firebaseUser)
+    //     // var user = $rootScope.firebaseUser;
+    //     AccountFactory.skills().then(function(data){
+    //         console.log('dat', data.val());
+    //         var skills =  data.val();
+    //         skills = _.map(skills, function(value,key){
+    //             return value
+    //         });
+    //         $scope.skills = skills;
+    //     });
+    //     // $scope.username = user.username;
+    //     // console.log(user)
+    // }
+    // // $scope.init(); 
 
 
-    $scope.updateInfo = function(){
-        console.log('working');
-        var info = $scope.profile.info; 
-        AccountFactory.updateInfo(info);
-    }
-    $scope.addSkill = function(){
-        var newSkill = {"name":$scope.skillData.newItem, "tooltip":""};
-        $scope.skills.push(newSkill);
-        AccountFactory.addSkill(newSkill);
-        $scope.skillData = {}
-    }
 
+    // $scope.formData = {};
+
+    // $scope.skillData = {};
+
+    // $scope.editswitch =  false;
+
+
+    // $scope.updateInfo = function(){
+    //     console.log('working');
+    //     var info = $scope.profile.info; 
+    //     AccountFactory.updateInfo(info);
+    // }
+    // $scope.addSkill = function(){
+    //     var newSkill = {"name":$scope.skillData.newItem, "tooltip":""};
+    //     $scope.skills.push(newSkill);
+    //     AccountFactory.addSkill(newSkill);
+    //     $scope.skillData = {}
+    // }
 
 
     // var profileRef = new Firebase(firebase_url + 'profile/');

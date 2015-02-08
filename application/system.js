@@ -13,7 +13,7 @@ var SystemApp = angular.module('SystemApp',
 	// ,'SkillsCtrl'
 	// ,'StatsCtrl'
 	// ,'EditProfileCtrl'
-	,'EditSkillsCtrl'
+	// ,'EditSkillsCtrl'
 	,'CloudCtrl'
 	,'CloudDirective'
 		,'MainCtrl'
@@ -71,16 +71,16 @@ SystemApp.config(['$stateProvider', '$urlRouterProvider',
             },
             'stats':{
             	templateUrl: 'application/profile/edit-profile-stats.html',
+	    		controller: 'AccountInterestCtrl'
 	    		// controller: 'EditSkillsCtrl'
-	    		controller: 'AccountCtrl'
+	    		// controller: 'AccountCtrl'
                 // controller: 'StatsCtrl'
-            },
-            'skills': {
-            	templateUrl: 'application/profile/edit-profile-skills.html',
-	    		controller: 'AccountCtrl'
+            }
+            // 'skills': {
+            	// templateUrl: 'application/profile/edit-profile-skills.html',
 	    		// controller: 'EditProfileCtrl'
                 // controller: 'SkillsCtrl'
-            }
+            // }
         }
 	};
 
