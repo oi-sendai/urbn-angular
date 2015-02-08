@@ -1,0 +1,77 @@
+<!-- <div class="row moral-justification">
+	<div class="col-sm-12">
+		<h2>"During previous ages, samurai were able to move between masters and even between occupations. However, during the Edo period, samurai were restricted, and were above all forbidden to become employed by another master without their previous master's permission." <span>Ni dieu ni maître</span></h2>
+	</div>
+</div> -->
+<div class="row moral-justification" ng-controller="CloudCtrl">
+	<div class="col-sm-8">
+		<div class="skills-list">
+		<p>loading bar</p>
+		<!-- {{skills}} -->
+		<button class="tc tc-{{skill.weight}}" 
+			ng-click="addFilter(skill.text)" 
+			ng-repeat="skill in skills">
+			{{skill.text}}
+			<span class="label label-info"> {{skill.weight}}</span>
+		</button>
+		<!-- <cloud skills="{{skills}}"></cloud> -->
+		<!-- <cloud ng-repeat="skill in skills" value="{{skill.weight}}" skill="{{skill.text}}"> -->
+
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="well">
+			<h4>Candidates</h4>
+			<ul>
+				<li ng-repeat="candidate in activeUsers">
+					<a href="#/profile/{{candidate.username}}" class="btn btn-success" 
+					>{{candidate.username}}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="well">
+			<h4>Active Filters</h4>
+			<button class="btn btn-primary" 
+				ng-click="removeFilter(skill)" 
+				ng-repeat="skill in filters">
+				{{skill}}
+		</button>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h1>What </h1>
+				<p>Finding employees is expensive. Whether your looking for a Loud Mouthed Accounts Administrator with Scaffolding experience, or a Polite Door Attendent with Arabic and Mixology, your in the right place.</p>
+		  	</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h1>When</h1>
+				<p>Sometimes the interpersonal skills and life experience are fare more important that the pieces of paper and rote industry learning. Yes you do need people that know what they are talking about and can do the job but sometimes it's the way they do the job that's equally important. If you are looking for a new job and get frustrated that people dont take into account your personal attribute and skills dont </p>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h1>Why</h1>
+				<p>It doesn't matter how able or clever someone is, if they are not in a job they love, someone else could be doing it better.</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h1>How</h1>
+				<p>We are founded on the notion that everyone has a passion, yet many people are prevented from working in that field by outdated notions of what makes somebody qualified</p>
+			</div>
+		</div>
+	</div>
+	<p>There is no point trying to game the skills section, if your trying to sell yourself as gardener and your tags make you appear in the office section, then people looking for gardening won't find you and people looking for office workers won't click on you. If your trying to sell gardening services to office workers simply createa new tag like micro-landscape-gardener.</p>
+</div>

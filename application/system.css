@@ -1,0 +1,140 @@
+body {
+  background:#120C0C; /* red */
+  background:#133730; /*green */
+	background:#0D0C12; /* blue */
+}
+/*.syslink {
+	cursor: pointer;
+}*/
+.ui-view-container {
+  margin-top:50px;
+}
+h1,h2,h3,h4,h5,h6,p,a,span {
+  font-family: 'PT Sans Narrow', sans-serif !important;
+}
+
+.system .navbar-default {
+background-color: #16201E;
+/* border-color: #e7e7e7; */
+/* border-top: 1px solid #000; */
+border-top: #76C2B2 1px solid;
+border-bottom: 0px;
+}
+
+/*font-family: 'Abril Fatface', cursive;*/
+
+.page-view .container:first-of-type{
+  margin-top:100px;
+}
+.home-welcome {
+  background:url('system/images/swords2.jpg');
+  background-size: cover;
+  /*text-align: center;*/
+  padding-top:40px;
+}
+.system .navbar-brand{
+  background: white;
+}
+.big-logo{
+
+font-size: 70px;
+}
+.logo-intro {
+color: #0A3D0A;
+}
+.logo-outro {
+  color:#7B0303;
+}
+.home-cta {
+padding: 0px 40px 0px;
+min-height: 256px;
+/*text-align: center;*/
+}
+
+
+
+
+.moral-justification {
+  padding:60px 0;
+}
+.moral-justification h2 {
+  color: #F0EBEB;
+  font-style: italic;
+  font-size: 17px;
+}
+.moral-justification h2 span {
+  font-size: 16px;
+  font-style: normal;
+}
+
+/* Profile __ Tabs */
+.profile_tabs {
+	background:#120C0C;
+	min-height: 300px;
+	padding:15px;
+	color:#fff;
+	overflow: hidden;
+}
+.profile_tab a {
+	cursor: pointer !important;
+}
+/*/*
+/* Animate -> Profile __ Tabs*/
+
+/*.profile_animate.ng-enter, .profile_animate.ng-leave {
+      left: 0;
+  right: 0;
+  -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+.profile_animate.ng-enter {
+  -webkit-transform: translate3d(100%, 0, 0);
+     -moz-transform: translate3d(100%, 0, 0);
+       -o-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+}
+
+.profile_animate.ng-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.profile_animate.ng-leave {
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.profile_animate.ng-leave-active {
+  -webkit-transform: translate3d(-100%, 0, 0);
+     -moz-transform: translate3d(-100%, 0, 0);
+       -o-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+}
+
+
+
+
+
+/* Animate layout ui-view tranisitions*/
+/*.fade.ng-enter, .fade.ng-leave {
+    position: absolute;
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+}
+
+.fade.ng-enter {
+   -webkit-animation-name: fadeInDown;
+   animation-name: fadeInDown;
+}
+
+.fade.ng-leave {
+   -webkit-animation-name: fadeOutDown;
+   animation-name: fadeOutDown;
+}
+*/*/

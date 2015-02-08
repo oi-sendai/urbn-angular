@@ -1,0 +1,19 @@
+<h2>Listings</h2>
+<ul>
+	<li ng-repeat="listing in listings">
+		<a href="#/listings/{{listing.username}}"> {{listing.username}}</a>
+	</li>
+</ul>
+<h2>Starred Listings</h2>
+<ul>
+	<li ng-repeat="listing in listings">
+		<a href="#/listings/{{listing.username}}"> {{listing.username}}<span class="label label-default">&#9734;</span></a>
+	</li>
+</ul>
+<h2>Filter By Stats</h2>
+<ul ng-controller="SkillsCtrl">
+	<li ng-repeat="skill in skills">
+		<a href="#/skills/{{skill.name}}" class="label label-default"> {{skill.name}}</a>
+	</li>
+</ul>
+                    

@@ -1,0 +1,25 @@
+{ "users" : [ null, 
+	{ 
+		"username":"me",
+		"name"   : { 
+			"last" : "Kafka", 
+			"first" : "Franz"
+		}, 
+		"profile": { 
+			"Introduction" : "I know it might affect my art if I leave my Brotberuf but I really think I could be doing something better with my time",
+			"Experience" : "Just a guy who writes short stories after work",
+		},
+		"stats": {
+			"location" : "Prague, Czechoslovakia", 
+			"rating"   : 6, 
+		},
+			"skills": [
+				{"name":"hardworking", "tooltip": "I was brought up this way"},
+				{"name":"design", "tooltip": "Is my favourite"},
+				{"name":"sewing","tooltip":"mongoose does this out the box"},
+				{"name":"javascript", "tooltip": "Is actually quite fun"},
+				{"name":"information architecture", "tooltip": "Something else I am interested in"}
+			]
+		}
+	}
+]} 

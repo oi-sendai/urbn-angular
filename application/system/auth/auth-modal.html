@@ -1,0 +1,71 @@
+
+        <div class="modal-header">
+            <h3 class="modal-title">What are you waiting for! A bamboo sword?</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row" ng-controller="AuthCtrl">
+                <div class="col-md-12">
+                    <div ng-show="user && user.id && !nowRegistered"> 
+                        <h2>Seems you already did that!</h2>
+                        <p><strong>User:</strong> {{user}}</p>
+                        <p><strong>User Data:</strong> {{userData}}</p>
+                        <button class="btn btn-primary" ng-click="logout()">Log Out</a>
+                        <img ng-show="loginBusy" src="img/loading.gif" style="margin: 0 10px;" />
+
+                    </div>
+                    <div ng-show="user && !user.id" ng-hide="nowRegistered">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" class="form-control" id="inputEmail" ng-model="inputEmail" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUsername">Username</label>
+                                <input type="text" class="form-control" id="inputUsername" ng-model="inputUsername" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" ng-model="inputPassword" placeholder="Password">
+                            </div>
+                            <!-- <button type="submit" class="btn btn-primary" ng-submit="login()" ng-click="login()">Log In</button>  -->
+                            <button class="btn btn-default" ng-click="register()">Register</button>
+                            <img ng-show="loginBusy" src="img/loading.gif" style="margin: 0 10px;" />
+                        </form>
+                    </div>
+                    <div ng-hide="nowRegistered">
+                        <form role="form">
+
+                            <div class="form-group">
+                                <label for="inputUsername">Username</label>
+                                <input type="text" class="form-control" id="inputUsername" ng-model="inputUsername" placeholder="Franz Kafka">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputIntroduction">Introduction</label>
+                                <textarea class="form-control" id="inputIntroduction" ng-model="inputIntroduction" placeholder="I know it might affect my art if I leave my Brotberuf but I really think I could be doing something better with my time" rows="4"></textarea>
+                                
+                            </div>
+                            <button type="submit" class="btn btn-primary" ng-submit="info()" ng-click="info()">Get moving</button> 
+                            <img ng-show="loginBusy" src="img/loading.gif" style="margin: 0 10px;" />
+                        </form>
+                    </div>
+
+                    <p class="alert alert-danger" ng-show="loginMessage" style="margin-top: 20px;">{{loginMessage}}</p>
+                </div>
+                
+
+
+
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+            <!-- <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b> -->
+
+

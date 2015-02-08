@@ -1,0 +1,27 @@
+{ "rules": {
+
+
+  "users": {
+    ".read": true,
+    // I can write the entire record if I own it
+    "$uid": {
+    	".write": "auth.uid == $uid",
+    	".read": true
+    },
+    "foo": {
+      // anybody in my friends list can write to foo, but not anything else in $record
+      ".write": "data.parent().child('friends/'+auth.uid).exists()"
+    }
+  },
+  
+  "listings": {
+    ".read": true,
+    ".write":true,
+    "$username": {
+      ".read": true,
+      ".write":true
+    } 
+  }
+
+
+} } // end rules
