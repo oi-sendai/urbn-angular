@@ -232,8 +232,32 @@ SystemApp.factory("AuthFactory", function($rootScope, $q, $http, $firebase) {
   		email: email, //email: "binarygeometry@gmail.com",
   		password: password, //password: "ZhBDxSXSN4JsL9aU",
   		rememberMe: true
-	})
-  };
+	});//.then(function(user, error) {
+ //            console.log("user has email " + user.email);
+ //        }, function(error) {
+ //            if (error.code = 'INVALID_EMAIL') {
+                
+ //                alert('email invalid or not signed up');
+ //            } else if (error.code = 'INVALID_PASSWORD') {
+                
+ //                alert('invalid password');
+ //            } else {
+
+ //                console.log(error);
+ //            } doesnt work
+ //        });
+ }; 
+
+
+// // Authenticate users with a custom Firebase token
+// ref.authWithCustomToken("<token>", authHandler);
+// // Alternatively, authenticate users anonymously
+// ref.authAnonymously(authHandler);
+// // Or with an email/password combination
+// ref.authWithPassword({
+// email : 'bobtony@firebase.com',
+// password : 'correcthorsebatterystaple'
+// }, authHandler);
 
   factory.getUsers = function () {
 		var usersRef = new Firebase(firebase_url + 'users/');
@@ -301,31 +325,46 @@ MainCtrl.controller('MainCtrl', function($rootScope, $scope, $http, $q, $firebas
 	$scope.registerData = {}
 	$scope.loginData = {}
 	$scope.newUser = false;
+	$scope.loggedIn = $scope.loggedIn || false;
+
+
+// if (authData) {
+
+// console.log("User " + authData.uid + " is logged in with " + authData.provider);
+// } else {
+// console.log("User is logged out");
+// }
 
 	var firebase_url = 'https://brilliant-fire-7870.firebaseio.com/';
 		// Print the current login state whenever it changes
 	var ref = new Firebase(firebase_url);
+
 
 	var authClient = new FirebaseSimpleLogin(ref, function(error, user) {
 	  if (error !== null) {
 	    // console.log("Error authenticating:", error);
 	  } else if (user !== null && $scope.newUser) {
 	    console.log("New User is logged in:", user);
+	    $scope.loggedIn =true; // set user as logged in
 	    $scope.saveNewUser(user); // save user to firebase
 	    $scope.newUser = false; // reset new user flag
-	    $rootScope.firebaseUser = user;
+	    $rootScope.firebaseUser = user.email;
 	    $scope.$apply(function() {
 	    	$location.path('/list');
 		});
 	  } else if (user !== null) {
 	    console.log("User is logged in:", user);
-	    $rootScope.firebaseUser = user;
+	    $scope.loggedIn =true; // set user as logged in
+	    $rootScope.firebaseUser = user.email;
 	    $scope.$apply(function() {
 	    	$location.path('/list');
 		});
 
+	  }  else if (error) {
+	  	// alert(error.message);doesnt work
 	  } else {
 	    console.log("User is logged out");
+	    $scope.loggedIn =false; // set user as logged in
 	     $scope.$apply(function() {
 	    	$location.path('/register');
 		});
@@ -355,6 +394,7 @@ MainCtrl.controller('MainCtrl', function($rootScope, $scope, $http, $q, $firebas
 		var email = $scope.registerData.email;
 		var password = $scope.registerData.password;
 		var username = $scope.registerData.username;
+		console.log(email, password, username);
 		$scope.uniqueUsername(username).then(function(exists){
 			if(!exists) {
 				console.log('creating new user')

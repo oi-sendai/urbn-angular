@@ -28,18 +28,27 @@
           </ul>
         </li> -->
       </ul>
-      <form class="navbar-form navbar-right" role="search">
-      <div class="form-group">
-            <h5>Hello {{greeting}}</h5>
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="text" ng-model="inputEmail" placeholder="email">
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="password" ng-model="inputPassword" placeholder="password">
-        </div>
-        <button class="btn btn-default" ng-click="login()" ng-submit="login">Sign In</button>
-      </form>
+      <ul class="navbar-form navbar-right" role="search" ng-controller="MainCtrl" >
+          <section ng-hide="loggedIn">
+        <form role="form">
+            <div class="form-group">
+              <input type="email" class="form-control" id="inputEmail" ng-model="registerData.email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="inputPassword" ng-model="registerData.password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default" ng-submit="login()" ng-click="login()">Log In</button> 
+        </form>
+          </section>
+          <section ng-show="loggedIn">
+        <form role="form">
+            <div class="form-group" ng-controller="MainCtrl">
+              <h3>Hello {{firebaseUser}}</h3>
+            </div>
+            <button type="submit" class="btn btn-default" ng-submit="logout()" ng-click="logout()">Log Out</button>
+          </form>
+          </section>
+        </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

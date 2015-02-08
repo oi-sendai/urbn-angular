@@ -3,10 +3,42 @@
 		<h2>"During previous ages, samurai were able to move between masters and even between occupations. However, during the Edo period, samurai were restricted, and were above all forbidden to become employed by another master without their previous master's permission." <span>Ni dieu ni maître</span></h2>
 	</div>
 </div> -->
+<section ng-controller="MainCtrl">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div >
+				logged in
+			</div>
+			<!-- <button ng-click="change()">change</button> -->
+			<img class="beer-logo" src="img/beer-logo.png"/>
+		</div>
+	</div>
+	<div class="row" ng-hide="loggedIn">
+		<div class="col-sm-12">
+			<h3 class="register-title">Register Here</h3>
+			<form role="form">
+				<div class="form-group">
+					<input type="email" class="form-control" id="inputEmail" ng-model="registerData.email" placeholder="Email">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputUsername" ng-model="registerData.username" placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" id="inputPassword" ng-model="registerData.password" placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-primary" ng-submit="login()" ng-click="login()">Log In</button> 
+				<button class="btn btn-default" ng-click="register()">Register</button>
+				<!-- <button type="submit" class="btn btn-primary" ng-submit="logout()" ng-click="logout()">Log Out</button>  -->
+				<img ng-show="loginBusy" src="img/loading.gif" style="margin: 0 10px;" />
+			</form>
+		</div>
+	</div>
+</section>  
+
+
 <div class="row moral-justification" ng-controller="CloudCtrl">
 	<div class="col-sm-8">
 		<div class="skills-list">
-		<p>loading bar</p>
 		<!-- {{skills}} -->
 		<button class="tc tc-{{skill.weight}}" 
 			ng-click="addFilter(skill.text)" 
