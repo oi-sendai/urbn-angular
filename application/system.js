@@ -49,7 +49,7 @@ SystemApp.config(['$stateProvider', '$urlRouterProvider',
 
 	var account= { 
 	    name: 'account',  //mandatory
-	    templateUrl: 'application/profile/profile-layout.html',
+	    templateUrl: 'application/account/account-layout.html',
 	    controller: 'UsersCtrl',
 	    // resolve: {
 
@@ -64,17 +64,13 @@ SystemApp.config(['$stateProvider', '$urlRouterProvider',
 	   		}]
 	   	} ,
 	    views:{
-            'dreams':{
-                templateUrl:'application/profile/edit-profile-dreams.html',
+            'content':{
+                templateUrl:'application/account/account-content.html',
 	    		controller: 'AccountCtrl'
-                // controller: 'DreamsCtrl'
             },
-            'stats':{
-            	templateUrl: 'application/profile/edit-profile-stats.html',
+            'interests':{
+            	templateUrl:'application/account/account-interests.html',
 	    		controller: 'AccountInterestCtrl'
-	    		// controller: 'EditSkillsCtrl'
-	    		// controller: 'AccountCtrl'
-                // controller: 'StatsCtrl'
             }
             // 'skills': {
             	// templateUrl: 'application/profile/edit-profile-skills.html',
@@ -98,16 +94,16 @@ SystemApp.config(['$stateProvider', '$urlRouterProvider',
 	   		}]
 	   	} ,
 	    views:{
-            'dreams':{
-                templateUrl:'application/profile/profile-dreams.html',
+            'content':{
+                templateUrl:'application/profile/profile-content.html',
                 controller: 'ProfileCtrl'
             },
-            'stats':{
-            	templateUrl: 'application/profile/profile-stats.html',
+            'details':{
+            	templateUrl: 'application/profile/profile-details.html',
                 controller: 'ProfileCtrl'
             },
-            'skills': {
-            	templateUrl: 'application/profile/profile-skills.html',
+            'interests': {
+            	templateUrl: 'application/profile/profile-interests.html',
                 controller: 'ProfileCtrl'
             }
         }

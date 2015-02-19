@@ -1,0 +1,65 @@
+<div class="row">
+	<div class="col-sm-5">
+		<section class="block">
+			<h3><i class="fa fa-user"></i> {{username}}</h3>		
+		</section>	
+		<section class="block new-line">
+			location
+			<i class="fa fa-tag"></i>
+			<div class="row">
+				<div class="col-sm-12">
+					<form role="form">
+					
+				    	<input type="text" class="form-control" ng-model="profile.location" placeholder="{{profile.location}}"></input>
+				  		<button type="submit" class="btn btn-default" ng-click="updateInfo()">Save</button>
+					</form>
+				</div>
+			</div>
+		</section>
+<!-- 		<section class="block new-line">
+			security
+			<i class="fa fa-lock"></i>
+			<div class="row">
+				<div class="col-sm-12">
+					<form role="form">
+					<div class="checkbox">
+				    	<label>
+				      		<input type="checkbox"> Allow unregistered users to contact me
+				    	</label>
+				  	</div>
+				  	<div class="checkbox">
+				    	<label>
+				      		<input type="checkbox"> Recruiter (your profile will not show in search)
+				    	</label>
+				  	</div>
+				  	<button type="submit" class="btn btn-default" ng-click="updateInfo()">Save</button>
+				</form>
+				</div>
+			</div>
+		</section>	 -->	
+	</div>
+	<div class="col-sm-7">
+		<section class="block">
+			write about yourself
+			<i class="fa fa-pencil-square-o"></i>
+			<form role="form">
+			<textarea class="form-control" rows="9" ng-model="profile.info" placeholder="{{profile.info}}"></textarea>
+			<button type="submit" class="btn btn-default" ng-click="updateInfo()">Save</button>
+			</form>
+		</section>	
+	</div>
+</div>
+<div class="row new-line">
+	<div class="col-sm-12">
+
+	</div>
+</div>
+
+
+
+
+
+
+					<p><strong>User:</strong> {{user}}</p>
+					<p><strong>User Data:</strong> {{userData}}</p>
+</div>
